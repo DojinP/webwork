@@ -1,0 +1,10 @@
+.metadata/
+clientweb/.classpath
+clientweb/.project
+clientweb/.settings/.jsdtscope
+clientweb/.settings/org.eclipse.core.resources.prefs
+clientweb/.settings/org.eclipse.jdt.core.prefs
+clientweb/.settings/org.eclipse.wst.common.component
+clientweb/.settings/org.eclipse.wst.common.project.facet.core.xml
+clientweb/.settings/org.eclipse.wst.jsdt.ui.superType.container
+clientweb/.settings/org.eclipse.wst.jsdt.ui.superType.name
