@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+/* 			.subject span:first-child{
+				color: red;
+			}
+			
+			.subject span:last-child{
+				color: blue;
+			}
+			
+			span {	-- inline 태그, 글자를 독립적인 요소로 만들기 위해 사용 (따라서 width 속성을 줄 수 없다.) --
+					width: 500px;
+					background-color: yellow;
+			} */
+			
+			/* .subject *:nth-child(2) {
+				color: red;
+			} */
+			
+			.subject *:nth-child(2n+1) { /* 홀수 행을 선택 */
+				color: blue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="subject">
+			<span>java</span>
+			<span>JDBC</span>
+			<div>servlet</div>
+			<p>jsp</p>
+			<h2>spring</h2>
+		</div>
+	</body>
+</html>
