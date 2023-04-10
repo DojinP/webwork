@@ -1,6 +1,58 @@
 @charset "UTF-8";
 
-p{
-	color: lime;
-	font-size: 14pt;
+#content{
+	font-family: 굴림체;
+	
+}
+
+h1{
+	color: #0f7a80;
+	font-size: 20pt;
+	font-weight: bold;	
+}
+
+img{
+	
+	margin-right: 10px;
+}
+
+#phase2{
+	margin-left: 50px;
+	width: auto;
+	height: 200px;
+	background-color: #a7cece;
+}
+
+#phase2_img{
+	position: fixed;
+}
+
+#phase2_paragraph>p{
+	font-style: italic;
+	position: relative;
+	top: 10px;
+	left: 100px;
+	margin-right: 110px;
+	
+}
+
+#outer{
+	
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#garden{
+	background-image: url("");
+	background-repeat: no-repeat;
+	background-color: #a6cdcd;
+	border: solid white 1px;
+	padding: 20px;
+	margin: 20px;
+	font-style: italic;
+	height: 70px;
+	width: 900px;
+	padding-left: 70px;
+	overflow: auto;
 }

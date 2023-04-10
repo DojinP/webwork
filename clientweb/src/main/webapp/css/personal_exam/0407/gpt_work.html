@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Memo</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			background-color: #333;
+			color: #fff;
+			padding: 20px;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 2em;
+		}
+
+		main {
+			max-width: 800px;
+			margin: 20px auto;
+			padding: 20px;
+			background-color: #f8f8f8;
+			box-shadow: 0 2px 4px rgba(0,0,0,.2);
+		}
+
+		p {
+			margin-bottom: 20px;
+			line-height: 1.5;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+		}
+
+		li {
+			margin-bottom: 10px;
+		}
+
+		footer {
+			background-color: #ccc;
+			padding: 10px;
+			text-align: center;
+			font-size: 0.8em;
+		}
+
+		form {
+			margin-top: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: bold;
+		}
+
+		input[type="text"],
+		textarea {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			resize: vertical;
+		}
+
+		input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #666;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Memo</h1>
+	</header>
+	<main>
+		<h2>To-Do List</h2>
+		<ul>
+			<li>Buy groceries</li>
+			<li>Pay bills</li>
+			<li>Finish project</li>
+		</ul>
+		<p>Don't forget to follow up with John about the meeting.</p>
+
+		<form>
+			<label for="note">Add a note:</label>
+			<textarea id="note" name="note" rows="5"></textarea>
+			<input type="submit" value="Add Note">
+		</form>
+	</main>
+	<footer>
+		<p>&copy; 2023 My Company</p>
+	</footer>
+</body>
+</html>
