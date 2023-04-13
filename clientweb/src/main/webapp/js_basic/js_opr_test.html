@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // 1. 산술 연산자 -> + - * /
+        // var num1 = prompt("숫자 1 입력");
+        // var num2 = prompt("숫자 2 입력");
+        // var result = num1+num2;
+        // alert(result);  // 100+200 = 100200
+        // prompt의 input 은 string 타입으로 인식한다.
+
+        var num1 = parseInt(prompt("숫자 1 입력"));
+        var num2 = parseInt(prompt("숫자 2 입력"));
+        var result = num1 + num2;
+        // alert("result=>" + result);  // 100+200 = 300
+        document.write("result=>" + result + "</br>");
+
+        var result = num1 - num2;
+        document.write("result=>" + result + "</br>");
+
+        var result = num1 * num2;
+        document.write("result=>" + result + "</br>");
+
+        var result = num1 / num2;
+        document.write("result=>" + result + "</br>");
+
+        // 2. 비교 연산자
+        // == 값만 비교
+        // === 자료형까지 비교(완전히 같은 값인지 여부 확인)
+        num3 = "100";
+        document.write((typeof num1) + "</br>");
+        document.write((typeof num3) + "</br>");
+        document.write("num1==num3:" + (num1==num3) + "</br>");
+        document.write("num1===num3:" + (num1===num3) + "</br>");
+
+    </script>
+</body>
+
+</html>

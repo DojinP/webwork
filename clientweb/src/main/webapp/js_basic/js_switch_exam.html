@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var score = parseInt(prompt("점수를 입력하세요"));
+        
+        // document.write("<h1> " + Math.floor(score/10) + "</h1>");
+
+        switch(Math.floor(score/10)){
+            case 10:
+            case 9:
+                document.write("<h1> 수 </h1>");
+                break;
+            case 8:
+                document.write("<h1> 우 </h1>");100
+                break;
+            case 7:
+                document.write("<h1> 미 </h1>");
+                break;
+            case 6:
+                document.write("<h1> 양 </h1>");
+                break;
+            case 5:
+            case 4:
+            case 3:
+            case 2:
+            case 1:
+            case 0:
+                document.write("<h1> 가 </h1>");
+                break;
+            default:
+                document.write("<h1> 점수잘못입력 </h1>");
+        }
+    </script>    
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function allcheck(){
+			var chkVal = myform.allchk.checked;
+			var myCheckList = myform.prd;
+			for(i=0; i<myCheckList.length; i++){
+				myCheckList[i].checked = chkVal;
+			}
+			calc();
+		}
+
+		function calc(){
+			var total = 0;
+			var totalSpan = document.getElementById("totalprice");
+			var prdSpan = document.getElementsByClassName("calcprice");
+
+			for(i=0; i<myform.prd.length; i++){
+				var count = parseInt(myform.count[i].value);
+				var price = parseInt(myform.price[i].value);
+				var prdPrice = 0;
+				
+				if(myform.prd[i].checked){
+					if(!isNaN(count)) {
+						prdPrice = (count * price);
+					}
+					prdSpan[i].innerHTML = prdPrice;
+				}else{
+					prdSpan[i].innerHTML = prdPrice;
+				}
+				total += prdPrice;
+			}
+			totalSpan.innerHTML = total;
+		}
+
+	</script>
+</head>
+<body>
+	<form name="myform">
+		<table border="1" width="800">
+			<tr>
+				<td><input type="checkbox" name="allchk" onclick="allcheck()"/>항목명</td>
+				<td>상품정보</td>
+				<td>수량</td>
+				<td>판매가</td>
+				<td>구매예정가</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="prd" onclick="calc()"/>완도미역</td>
+				<td><img src="pro1.jpg"/></td>
+				<td><input type="text" name="count" value="1" onkeyup="calc()"/></td>
+				<td><input type="text" name="price" value="6900"/><span>원</span></td>
+				<td><span class="calcprice"></span><span>원</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="prd" onclick="calc()"/>스카트 빨아쓰는 휴지</td>
+				<td><img src="pro2.jpg"/></td>
+				<td><input type="text" name="count" value="1" onkeyup="calc()"/></td>
+				<td><input type="text" name="price" value="7800"/><span>원</span></td>
+				<td><span class="calcprice" ></span><span>원</span></td>
+			</tr>
+			<tr>
+				<td colspan="6" align="right"><span id="totalprice"></span><span>원</span></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

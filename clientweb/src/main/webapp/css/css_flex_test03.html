@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Page Title</title>
+    <style type="text/css">
+        #outer{
+            width: 600px;
+            /* flex 속성을 적용했을때 height 속성을 주지 않으면 height는 자동으로 content의 height 사이즈가 된다. */
+            height: 600px;
+            color: aqua;
+            background-color: pink;
+            /* flex는 정렬을 해주기 위한 속성 */
+            display: flex;
+            /* flex-wrap 속성을 주면 outer width 사이즈를 넘어가는 content는 사이즈 내부에서 줄바꿈이 실행된다 (너비에 맞게 줄로 출력) */
+            flex-wrap: wrap;
+            /* (수평 정렬에 대한 속성) 지정한 방향으로 콘텐츠를 정렬한다. */
+            justify-content: center;
+            /* 수직 정렬에 대한 속성 */
+            align-content: flex-start;
+        }
+
+        #outer .item{
+            width: 100px;
+            height: 100px;
+            border: solid 1px blue;
+            background-color: orange;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</body>
+</html>

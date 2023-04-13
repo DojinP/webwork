@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Date 객체 연습하기</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var curTime = new Date();
+        
+        // curTime.setDate(13);
+
+        // 1. 오전/오후 배경 색상
+        if(Math.floor(curTime/12) == 1){
+            document.bgColor = "lime";
+        }else{
+            document.bgColor = "tomato";
+        }
+
+        // 2. 요일별 이미지
+        document.write("<div>");
+        document.write("<img src='../images/jang" + (curTime.getDay()+1) + ".jpg' width=500 height=800>");
+        document.write("</div>");
+
+    </script>
+
+</body>
+</html>

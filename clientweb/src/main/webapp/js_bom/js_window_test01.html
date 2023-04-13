@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function testConfirm() {
+			var result = window.confirm("삭제하시겠습니까?");
+			if (result) {
+				alert("삭제시작");
+			} else {
+				alert("삭제취소");
+			}
+		}
+		// popup 창이 오픈되도록 실행
+		function searchAddress() {
+			var myPopup = window.open("../js_bom/js_popup.html", "mywin", "width=500, height=300, left=300, top=200");
+		}
+
+		function idCheck() {
+			var idPopup = window.open("../js_bom/js_popup.html", "mywin", "width=500, height=300, left=300, top=200");
+		}
+
+		function test_number() {
+			var num1 = window.parseInt(myForm.num1.value);
+			var num2 = parseInt(myForm.num2.value);
+			myForm.result.value = num1 + num2;
+		}
+
+		function test_number2() {
+			alert(myForm.num1.value + myForm.num2.value);	// 숫자 모양의 문자열
+			alert("isNaN의 결과 ==> " + isNaN(myForm.num1.value));
+			alert("eval의 결과 ==> " + eval(myForm.num2.value));
+			// location.href = "http://www.naver.com"
+			var data1 = myForm.num1.value;
+			alert("문자열의 길이 => " + data1.length);
+			var data2 = data1.trim(); // 양 끝의 공백을 제거
+			alert("문자열의 길이 => " + data2.length);
+			if(data2=="test"){
+				alert("일치");
+			}else{
+				alert("불일치");
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<button onClick="window.alert('경고창')">경고창</button>
+	<button onClick="testConfirm()">확인창</button>
+	<button onClick="test_number()">숫자처리메서드</button>
+	<button onClick="test_number2()">숫자처리메서드2</button>
+	<button onClick="window.close()">닫기</button>
+
+	<form action="" name="myForm">
+		아이디 : <input type="text" name="id">
+		<input type="button" value="아이디 중복체크" onClick="idCheck()">
+		<br>
+
+		우편번호 : <input type="text" name="zipcode">
+		<input type="button" value="SEARCH ADDRESS" onClick="searchAddress()">
+		<br>
+
+		상세주소 : <input type="text" name="address">
+		<input type="submit" value="SEND">
+		<br>
+
+		숫자1 : <input type="text" name="num1"> <br />
+		숫자2 : <input type="text" name="num2"> <br />
+		결과 : <input type="text" name="result"> <br />
+
+	</form>
+</body>
+
+</html>

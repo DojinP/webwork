@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- prompt로 점수를 입력받아 수, 우, 미, 양, 가 출력하기 -->
+    <!-- 100점 이상이나 0점 미만 점수 입력 시 "점수잘못입력" 출력하기 -->
+    <!--                                       document.write(h1태그로 출력) -->
+    <!--                                       prompt도 parseInt로 number 타입으로 변환하여 작업 -->
+    <script type="text/javascript">
+        var score = parseInt(prompt("점수를 입력하세요"));
+        
+        if(score > 100 || score < 0){
+            document.write("<h1> 점수잘못입력 </h1>");
+        }else{
+            if(score > 90){
+                document.write("<h1> 수 </h1>");
+            }else if(score > 80){
+                document.write("<h1> 우 </h1>");
+            }else if(score > 70){
+                document.write("<h1> 미 </h1>");
+            }else if(score > 60){
+                document.write("<h1> 양 </h1>");
+            }else if(score > 0){
+                document.write("<h1> 가 </h1>");
+            }else{
+                document.write("<h1> 잘못된 입력 </h1>");
+            }
+        }
+
+    </script>    
+</body>
+</html>
