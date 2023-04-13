@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title> New Document </title>
+	<script type="text/javascript">
+		function button_click(input){
+			console.log("버튼입력:"+input);
+			myform.mytext.value += input;
+		}
+
+		function compute(){
+			var formula = myform.mytext.value;
+			
+			// 탈출문 - 마지막이 연산자로 끝나는 경우
+			if(isNaN(formula[formula.length-1])){
+				alert("잘못된 수식입니다.");
+				clear_del();
+				return;
+			}
+
+			var numArr = new Array();
+			var operArr = new Array();
+			var numStr = "";
+
+			for(i=0; i<formula.length; i++){
+				if(isNaN(formula[i]) && formula[i] != '.'){
+					numArr.push(parseFloat(numStr));	// 피연산자 저장
+					operArr.push(formula[i]);		// 연산자 저장
+					numStr = "";
+					continue;
+				}
+				numStr += formula[i];
+			}
+			numArr.push(parseFloat(numStr));	// 마지막 피연산자 저장
+
+			// 값 점검
+			for(i=0; i<numArr.length; i++){
+				console.log("numArr " + (i+1) + "번째 요소 : " + numArr[i]);
+			}
+
+			for(i=0; i<operArr.length; i++){
+				console.log("operArr " + (i+1) + "번째 요소 : " + operArr[i]);
+			}
+
+			// 연산
+			var result = numArr[0];
+			for(i=0; i<operArr.length; i++){
+
+				switch(operArr[i]){
+					case '+':
+						result += numArr[i+1];
+						break;
+					
+					case '-':
+						result -= numArr[i+1];
+						break;
+					
+					case '*':
+						result *= numArr[i+1];
+						break;						
+					
+					case '/':
+						if(numArr[i+1] == 0){
+							alert("0으로 나눌 수 없습니다.");
+							clear_del();
+							return;
+						}
+						result /= numArr[i+1];
+						break;
+
+					case '%':
+						if(numArr[i+1] == 0){
+							alert("0으로 나눌 수 없습니다.");
+							clear_del();
+							return;
+						}
+						result %= numArr[i+1];
+						break;
+				}
+			}
+
+			myform.mytext.value = result;
+		}
+
+		function clear_del(){
+			myform.mytext.value = "";
+		}
+	</script>
+</HEAD>
+
+<BODY>
+<br/>
+	<h1>계산기 활용 예</h1>
+	<form name="myform">
+		<table border="1">
+			<tr>
+				<td colspan="4"><input type="text" size="28" name="mytext"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="   7   " onclick="button_click('7')"></td>
+				<td><input type="button" value="   8   " onclick="button_click('8')"></td>
+				<td><input type="button" value="   9   " onclick="button_click('9')"></td>
+				<td><input type="button" value="   /   " onclick="button_click('/')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="   4   " onclick="button_click('4')"></td>
+				<td><input type="button" value="   5   " onclick="button_click('5')"></td>
+				<td><input type="button" value="   6   " onclick="button_click('6')"></td>
+				<td><input type="button" value="   *   " onclick="button_click('*')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="   1   " onclick="button_click('1')"></td>
+				<td><input type="button" value="   2   " onclick="button_click('2')"></td>
+				<td><input type="button" value="   3   " onclick="button_click('3')"></td>
+				<td><input type="button" value="   -   " onclick="button_click('-')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="   0   " onclick="button_click('0')"></td>
+				<td><input type="button" value="   .    " onclick="button_click('.')"></td>
+				<td><input type="button" value="   +   " onclick="button_click('+')"></td>
+				<td><input type="button" value="   %  " onclick="button_click('%')"></td>
+			</tr>
+			<tr>
+				<td  colspan="2"><input type="button" value="  계산하기  " onclick="compute()"></td>
+				<td  colspan="2"><input type="button" value="   지우기    " onclick="clear_del()"></td>
+			</tr>
+		</table>
+	</form>
+</BODY>
+</HTML>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <!-- prompt로 점수를 입력받아 수, 우, 미, 양, 가 출력하기 -->
+    <!-- 100점 이상이나 0점 미만 점수 입력 시 "점수잘못입력" 출력하기 -->
+    <!--                                       document.write(h1태그로 출력) -->
+    <!--                                       prompt도 parseInt로 number 타입으로 변환하여 작업 -->
+    <script type="text/javascript">
+        ssn = prompt("주민번호 7번 값 입력");
+        switch(ssn){
+            case "1":
+            case "3":
+                alert("남자");
+                break;
+            case "2":
+            case "4":
+                alert("여자");
+                break;
+            default:
+                alert("기타");
+        }
+        
+        alert(Math.floor(98/10));
+
+    </script>    
+</body>
+</html>

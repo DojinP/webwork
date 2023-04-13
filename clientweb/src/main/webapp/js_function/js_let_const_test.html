@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        var num =1000; 
+        // let으로 변수 선언하기
+        // => 선언된 위치(정의된 블럭)에서만 사용할 수 있다.
+        let point = 99;
+        let myval = 0;
+        const data = 100;
+        if(point > 90){
+            let ifval = "test";
+            myval = 2000;
+            // data = 300; // 상수로 선언된 변수 (변경이 불가능)
+            console.log("if블럭에서 정의된 val=>" + myval);
+            console.log("const로 선언된 변수 data=>" + data);
+
+        }
+        console.log("point=>" + point);
+        console.log("myval(head)=>" + myval);
+        // console.log("if블럭에서 정의된 val=>" + myval);
+    </script>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    <script type="text/javascript">
+        // let num = 2000;
+        let num1 = 2000;
+        console.log("num1=>" + num1);
+        console.log("myval(body)=>" + myval);
+    </script>
+</body>
+</html>

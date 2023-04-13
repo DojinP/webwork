@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		// 모두체크/해제 체크박스를 선택하면 food 이름으로 정의된 모든 체크박스가 선택
+		// 이미 선택되어 있다면 모든 체크박스의 선택을 해제
+		function allcheck(){
+			// 1. name이 allchk인 체크방스 상태값을 가져오기
+			// => checkbox의 checked 속성을 가져온다 (체크 유무 저장된 속성)
+			var chkVal = cbfmt.allchk.checked;
+			// alert('chkVal');
+
+			// 2. food 라는 name으로 정의된 모든 체크박스를 받아오기
+			// => name, class 속성이 동일한 모든 HTML 요소나 동일한 태그들처럼 여러 개가 반환되는 HTML 요소는 Nodelist로 내부에서 관리된다.// 
+			// => Nodelist는 배열처럼 관리된다.
+			
+			var myCheckList = cbfmt.food;
+			// alert(myCheckList);	// Nodelist (배열처럼 처리가 된다.)
+			// alert(myCheckList.length);
+
+			// 3. myCheckList에 담긴 체크박스들의 모든 상태값을 allchk 의 값과 동일하게 변경
+			for(i=0; i<myCheckList.length; i++){
+				myCheckList[i].checked = chkVal;
+			}
+		}
+
+		function ckFunc(){
+			// 체크된 항목의 value를 id가 result인 div에 출력하기
+			// 1. food 라는 이름으로 정의된 체크박스 목록을 받아오기
+			// 2. 체크유무를 확인
+			// 3. result에 출력
+			var myCheckList = cbfmt.food;
+			var myDiv = document.getElementById("result");
+			
+			for(i=0; i<myCheckList.length; i++){
+				if(myCheckList[i].checked == true){
+					myDiv.innerHTML += myCheckList[i].value + " ";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+		<form name="cbfmt">
+			<label>아이스크림</label> 
+			<input type="checkbox" name="food"
+			 value="아이스크림" id="ice"> 
+				<label>커피</label> <input type="checkbox"	
+				name="food" value="커피" id="coffee">
+				 <label>음료수</label> <input type="checkbox" 
+				 name="food" value="음료수" id="beverage"> 
+				<label>모두체크/해제</label>
+			<input type="checkbox" name="allchk" 
+			id="allchk" onclick="allcheck()" ><br>
+
+			<input type="button" value="전송" onclick="ckFunc()">
+		</form>
+		<div id="result"></div>
+</body>
+</html>

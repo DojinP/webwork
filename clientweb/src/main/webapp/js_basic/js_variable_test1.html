@@ -1,0 +1,46 @@
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        num1 = 500;
+        num2 = 400;
+        console.log(num1+num2);
+        document.write("result=" + (num1+num2) + "</br>");
+        console.log(typeof num1);
+
+        num1 = "자바스크립트"
+        document.write("result=" + num1 + "</br>");
+        console.log(typeof num1);
+
+        /*
+            여러 줄 주석문
+        */
+
+        // 한 줄 주석문
+
+        // 변수 타입
+        data1 = 100;
+        data2 = "문자열";
+        data3 = true; // false
+        data4 = new Date();
+        data5 = '문자열';
+        data6 = undefined;
+        data7 = null;
+
+        console.log("================================")
+        console.log(typeof data1);  // number
+        console.log(typeof data2);  // string
+        console.log(typeof data3);  // boolean
+        console.log(typeof data4);  // object
+        console.log(typeof data5);  // string
+        console.log(typeof []);     // object
+        console.log(typeof {});     // object
+        console.log(typeof data6);  // undefined
+        console.log(typeof data7);  // object
+
+    </script>
+</body>
+</html>

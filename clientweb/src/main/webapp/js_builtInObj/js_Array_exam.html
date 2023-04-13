@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Array 객체</title>
+    <script type="text/javascript">
+    	
+        function showArr(myArr){
+        	var sum = 0;
+        	var avg = 0;
+        	var arrLen = myArr.length;
+        	document.write("<h3> myArr </h3> <br/>");
+        	for(i=0; i<arrLen; i++){
+        		sum += myArr[i];
+        		document.write(myArr[i] + " ");
+        	}
+        	avg = sum / arrLen;
+        	document.write("<br/>");
+        	document.write("<h3> 합계 </h3> <br/>");
+        	document.write(sum);
+        	document.write("<h3> 평균 </h3> <br/>");
+        	document.write(avg);
+        	
+        }
+
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        var myArr = [99, 89, 100, 100, 90];
+        
+        showArr(myArr);
+	        
+    </script>
+
+</body>
+</html>

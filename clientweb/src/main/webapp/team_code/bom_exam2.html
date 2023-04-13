@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+
+		<script type="text/javascript">
+			
+			function joinus(){
+				var result = document.getElementById("kimi").value;
+				var arr = new Array(result.length);
+				// for(i=0;i<arr.length;i++){
+				// 	arr[i] = result.slice[i,i+1];
+				// }
+				var str1="4글자 이상의 글자를 입력하세요.";
+				var str2="이미 사용중인 아이디 입니다.";
+				var str3="사용 가능한 아이디 입니다.";
+				if(arr.length<4){
+					document.getElementById("reject1").innerHTML = str1;	
+					document.getElementById("accept").innerHTML = "";	
+				} else if (result=="java"){
+					document.getElementById("reject1").innerHTML = str2;
+					document.getElementById("accept").innerHTML = "";	
+				} else{
+					document.getElementById("accept").innerHTML = str3;
+					document.getElementById("reject1").innerHTML = "";
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<h1 style="font-family: 굴림">티몬 회원가입</h1>
+		<h2 style="font-family: 굴림">필수항목</h2>
+		<form name="dobby">
+			아이디 : <input type="text" name="id" id="kimi" onkeyup="joinus()" />
+		</form>
+		
+		<div id="reject1" style="color:red;font-family: 굴림;"></div>
+		<!-- <div id="reject2" style="color:red;font-family: 굴림;"></div> -->
+		<div id="accept" style="color:blue;font-family: 굴림;"></div>
+	</body>
+</html>

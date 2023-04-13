@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+
+	</style>
+	<script type="text/javascript">
+		function drawCalender() {
+			// 1. 변수 선언
+			// 매월 마지막날의 데이터 배열로 선언
+			var lastDayOfMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+			// var myDate = new Date();	// 현재 날짜 객체 생성
+			// var myDate = new Date("2023/4/20");
+			var myDate = new Date("2020/2/20");
+			var firstDate = new Date();	// 이 달의 첫날에 대한 Date 객체 저장을 위한 객체 생성
+			firstDate.setDate(1);		// firstDate 이 달의 1일로 setting
+			var firstDayOfMonth = firstDate.getDay();	// 이 달 1일의 day(요일) 값
+			// var lastDateOfMonth = lastDayOfMonth[myDate.getMonth()];	// 이 달의 마지막 Date 값
+
+			// ++ 윤년 계산관련
+			if(isLeapYear(myDate.getFullYear())){
+				lastDayOfMonth[1] = 29;	// 2월 29일 까지
+			}
+
+			var lastDateOfMonth = lastDayOfMonth[myDate.getMonth()];	// 이 달의 마지막 Date 값
+
+			// 2. 달력 출력
+			// 년월 표시줄
+			document.write("<h1 style='color:blue; text-align:center;'>" + myDate.getFullYear() + "년" + (myDate.getMonth() + 1) + "월</h1>");
+
+			// 요일 표시줄
+			document.write("<table border=0 width=900 height=800 style='text-align:center; font-size:15pt; font-weight:bold; margin-left: auto; margin-right: auto;'>");
+			document.write("<tr bgColor=#ffcc66>");
+			document.write("<td>일</td><td>월</td><td>화</td><td>수</td><td>목</td><td>금</td><td>토</td>");
+			document.write("</tr>");
+
+			// 공백 칸 출력
+			document.write("<tr>");
+			for (i = 0; i < firstDayOfMonth; i++) {
+				document.write("<td bgColor=#ffff99> </td>");
+				// document.write("<td>" + i  + "</td>");
+			}
+			// 나머지 칸 출력
+			for (i = 1; i <= lastDateOfMonth; i++) {
+				if ((i + firstDayOfMonth) % 7 == 1) {
+					document.write("<tr>");
+				}
+
+				if (myDate.getDate() == i) {
+					document.write("<td bgColor=#ffcccc>" + i + "</td>");
+				} else {
+					document.write("<td bgColor=#ffff99>" + i + "</td>");
+				}
+
+				if ((i + firstDayOfMonth) % 7 == 0) {
+					document.write("</tr>");
+				}
+			}
+
+			document.write("</table>");
+		}
+
+		function isLeapYear(Year){
+			// 4로 나누어 떨어지면서 100으로 나누어 떨어지지 않거나,
+			// 400으로 나누어 떨어지는 경우 윤년
+			return ((Year % 4 == 0) && (Year % 100 != 0) || (Year % 400 == 0));
+		}
+	</script>
+</head>
+
+<body>
+	<h2></h2>
+	<script type="text/javascript">
+		drawCalender();
+		// alert(isLeapYear(2020));
+		// alert(isLeapYear(2021));
+	</script>
+
+</body>
+
+</html>

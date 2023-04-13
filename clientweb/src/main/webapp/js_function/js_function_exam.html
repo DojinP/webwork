@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function printGugu() {
+            document.write("<table border='1'>");
+            for (dan = 1; dan <= 9; dan++) {
+                document.write("<tr>");
+                for (i = 1; i <= 9; i++) {
+                    document.write("<td><h3>" + dan + "*" + i + "=" + (dan * i) + "</h3></td>");
+                }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        }
+
+        function getSum(start, end) {
+            sum = 0;
+            if (start > end) {
+                alert('getSum() : 잘못된 결과');
+                return;
+            }
+
+            for (i = start; i <= end; i++) {
+                sum = sum + i;
+            }
+
+            return sum;
+        }
+
+        function calc(num1, num2, opr) {
+            switch (opr) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 == 0) {
+                        alert('calc() : 0으로 나눌 수 없습니다.');
+                        return;
+                    }
+                    result = num1 / num2;
+                    break;
+                default:
+                    alart('calc() : 잘못된 입력');
+                    result = null;
+            }
+
+            return result;
+        }
+    </script>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // printGugu()
+        document.write("<h1> printGugu() </h1>");
+        printGugu();
+
+        document.write("</hr></hr></hr>");
+
+        document.write("<h1> getSum() </h1>");
+        start = parseInt(prompt("'getSum(start, end)' start 값을 입력하세요 "));
+        end = parseInt(prompt("'getSum(start, end)' end 값을 입력하세요 "));
+        document.write("<h1> 결과 : " + getSum(start, end) + "</h1>");
+
+        document.write("</hr></hr></hr>");
+
+        document.write("<h1> calc() </h1>");
+        num1 = parseInt(prompt("'calc(num1, num2, opr)' num1 값을 입력하세요 "));
+        num2 = parseInt(prompt("'calc(num1, num2, opr)' num2 값을 입력하세요 "));
+        opr = prompt("'calc(num1, num2, opr)' opr 값을 입력하세요 \n 입력 가능한 연산자 ('+', '-', '*', '/')");
+        document.write("<h1> 결과 : " + calc(num1, num2, opr) + "</h1>");
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function calc(){
+            var discountRate = 0.1;
+            var price = 12900;
+            var count = parseInt(myForm.input_count.value);
+            var mySpan = document.getElementById("mySpan");
+            mySpan.innerHTML = (1-discountRate) * price * count;
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm">
+    수량:<input type="text" name="input_count" onchange="calc()"> <span id="mySpan"></span>
+    </form>
+</body>
+</html>
