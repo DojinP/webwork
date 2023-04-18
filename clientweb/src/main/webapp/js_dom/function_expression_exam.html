@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		/*
+			1번부터 4번버튼을 누르면 메시지가 출력될 수 있도록
+				1. 메시지는 아무때나 출력되도록
+				2. 이벤트핸들러 속성을 이용해서 연결
+				3. 4번버튼은 callback의 형식으로 함수를 연결
+					함수명 : mycallback
+				4. 1번부터 4번 버튼에 id 정의
+		*/
+		window.onload = function(){
+			document.getElementById("btn1").onclick = function(){
+				alert('버튼 클릭됨');
+			}
+			document.getElementById("btn2").onclick = function(){
+				alert('버튼 클릭됨');
+			}
+			document.getElementById("btn3").onclick = function(){
+				alert('버튼 클릭됨');
+			}
+			document.getElementById("btn4").onclick = mycallback;
+			
+		}
+
+		function mycallback(){
+				alert('callback버튼 클릭됨');
+				// 1. id가 myform 인 객체를 구하기
+				var myform = document.getElementById("myform");
+				// 2. myform 객체의 자식 노드를 구하기
+				var myformChild = myform.childNodes;
+				// 3. 2번에서 구한 모든 자식노드 탐색 (for문 이용)
+				// 4. 3번에서 자식노드를 탐색하며 노드명과 id 속성값 출력하기
+				for(i=0; i<myformChild.length; i++){
+					console.log("노드명 : " + myformChild[i].nodeName);
+					if(myformChild[i].nodeName != "#text"){
+						console.log("id값 : " + myformChild[i].getAttribute("id"));
+					}
+				}
+		}
+
+	</script>
+</head>
+<body>
+	<form id="myform">
+		<input type="button" value="1번버튼" id="btn1"/>
+		<input type="button" value="2번버튼" id="btn2"/>
+		<input type="button" value="3번버튼" id="btn3"/>
+		<input type="button" value="4번버튼" id="btn4"/>
+	</form>
+</body>
+</html>

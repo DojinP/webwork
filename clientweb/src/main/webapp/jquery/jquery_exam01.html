@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="../common/css/my_style2.css">
+	<script type="text/javascript">
+		let visitor = new Object();
+		$(document).ready(function(){
+			$(".gardenimg").on("mouseover", function(){
+				$(".gardenimg p").remove();
+				visitor = $("<p> 방문자수: " + Math.floor(Math.random()*1000) + "</p>");
+				$(this).append(visitor);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="header">
+		<h2>아침고요수목원~</h2>
+	</div>
+	<div id="main">
+		<div class="gardenimg" id="img1"><img src="../images/m_garden01.jpg" /></div>
+		<div class="gardenimg" id="img2"><img src="../images/m_garden02.jpg" /></div>
+		<div class="gardenimg" id="img3"><img src="../images/m_garden03.jpg" /></div>
+		<div class="gardenimg" id="img4"><img src="../images/m_garden05.jpg" /></div>
+	</div>
+
+	<script>
+
+	</script>
+</body>
+
+</html>
